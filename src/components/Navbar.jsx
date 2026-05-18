@@ -33,6 +33,11 @@ export default function Navbar() {
     })
   }
 
+  const closeMobile = () => {
+    setMobileOpen(false)
+    document.body.style.overflow = ''
+  }
+
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} role="banner">
       <div className="container navbar__inner">
@@ -77,8 +82,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Overlay */}
-      <div className={`navbar__mobile-overlay${mobileOpen ? ' open' : ''}`} onClick={toggleMobile} />
-      <div className={`navbar__mobile${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>
+      <div className={`navbar__mobile-overlay${mobileOpen ? ' open' : ''}`} onClick={closeMobile} />
+      <div 
+        className={`navbar__mobile${mobileOpen ? ' open' : ''}`} 
+        aria-hidden={!mobileOpen}
+        inert={!mobileOpen ? true : undefined}
+      >
         <nav aria-label="Mobile navigation">
           {navLinks.map(({ to, label }) => (
             <NavLink
@@ -88,12 +97,13 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `navbar__mobile-link${isActive ? ' active' : ''}`
               }
+              onClick={closeMobile}
             >
               {label}
             </NavLink>
           ))}
         </nav>
-        <Link to="/contact" className="btn btn-primary" style={{ marginTop: '24px' }} id="mobile-get-started-btn">
+        <Link to="/contact" className="btn btn-primary" style={{ marginTop: '24px' }} id="mobile-get-started-btn" onClick={closeMobile}>
           Get Started
         </Link>
       </div>

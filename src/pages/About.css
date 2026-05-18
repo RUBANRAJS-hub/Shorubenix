@@ -551,6 +551,129 @@
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
 }
 
+/* ─ Co-Founders ─ */
+.founders-sec {
+  position: relative;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.founder-card {
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+.founder-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary) 0%, rgba(0, 174, 239, 0.1) 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.2);
+}
+
+.founder-card__avatar span {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: 0.05em;
+}
+
+.founder-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 4px;
+}
+
+.founder-card__role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+.founder-card__skills {
+  margin-bottom: 24px;
+}
+
+.founder-card__skills strong {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-gray);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.founder-card__skills ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-card__skills li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-white);
+}
+
+.skill-check-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.founder-card__vision {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--primary);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: auto;
+}
+
+.founder-card__vision strong {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-gray);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.founder-card__vision p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-white);
+  font-style: italic;
+}
+
 /* ─ Responsive ─ */
 @media (max-width: 1024px) {
   .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -558,6 +681,7 @@
 }
 
 @media (max-width: 900px) {
+  .founders-grid { grid-template-columns: 1fr; gap: 24px; }
   .about-services-grid { grid-template-columns: 1fr; }
   .success-inner { grid-template-columns: 1fr; gap: 40px; }
   .mission-grid { grid-template-columns: 1fr; }
