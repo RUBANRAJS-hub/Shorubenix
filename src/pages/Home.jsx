@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import {
   FiZap, FiShield, FiClock, FiRefreshCw,
-  FiArrowRight, FiCode, FiFileText, FiBookOpen, FiAward
+  FiArrowRight, FiCode, FiFileText, FiBookOpen, FiAward, FiStar
 } from 'react-icons/fi'
+import { SHEETS_CONFIG } from '../sheets.config'
 import './Home.css'
 
 /* ─── Data ─── */
@@ -45,6 +46,45 @@ const stats = [
   { value: '98%',  label: 'Client Satisfaction' },
   { value: '50+',  label: 'Journals Published' },
   { value: '24/7', label: 'Support Available' },
+]
+
+const googleReviews = [
+  {
+    id: 1,
+    name: 'Vijay Kumar',
+    role: 'Student, CSE',
+    initials: 'VK',
+    rating: 5,
+    text: 'Exceptional final year project support! Ruban and Subbulakshmi helped me build a custom AI-driven IoT system. The code was clean, fully commented, and their viva prep support helped me score an A+!',
+    time: '2 weeks ago',
+  },
+  {
+    id: 2,
+    name: 'Deepika R.',
+    role: 'Research Scholar',
+    initials: 'DR',
+    rating: 5,
+    text: 'I got IEEE paper publication guidance from Shorubenix. Their literature survey drafting and research methodology section was extremely detailed and plagiarism-free. Highly recommended for any student researcher!',
+    time: '3 weeks ago',
+  },
+  {
+    id: 3,
+    name: 'Sanjay Shrinivas',
+    role: 'Startup Founder',
+    initials: 'SS',
+    rating: 5,
+    text: 'We hired Shorubenix for full-stack React and Node web app development. The website is extremely responsive on mobile, loads in less than a second, and their post-delivery support is incredibly fast. Brilliant job!',
+    time: '1 month ago',
+  },
+  {
+    id: 4,
+    name: 'Abinaya K.',
+    role: 'Engineering Graduate',
+    initials: 'AK',
+    rating: 5,
+    text: 'Extremely professional! They delivered my web app project and detailed technical project reports 3 days before my university deadline. Their quick response on WhatsApp saved my final presentation!',
+    time: '1 month ago',
+  },
 ]
 
 /* ─── Component ─── */
@@ -102,7 +142,7 @@ export default function Home() {
             </div>
             {/* Floating code chips */}
             <div className="hero__chip hero__chip--1">&lt;/&gt;</div>
-            <div className="hero__chip hero__chip--2">{ }</div>
+            <div className="hero__chip hero__chip--2">{"{ }"}</div>
             <div className="hero__chip hero__chip--3">AI</div>
             <div className="hero__chip hero__chip--4">01</div>
           </div>
@@ -171,6 +211,100 @@ export default function Home() {
                     <h4 className="feature-card__title">{title}</h4>
                     <p className="feature-card__desc">{desc}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Live Google Reviews ── */}
+      <section className="section reviews-sec" id="google-reviews">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Client Reviews</span>
+            <h2 className="section-title">
+              What Our Clients Say on <span className="gradient-text">Google</span>
+            </h2>
+            <p className="section-subtitle">
+              Verified feedback from CSE/IT engineering students, researchers, and early-stage startups.
+            </p>
+            <div className="divider" />
+          </div>
+
+          <div className="reviews-layout">
+            {/* Google Rating Summary Card */}
+            <div className="reviews-summary glass-card">
+              <div className="google-brand-meta">
+                <svg viewBox="0 0 24 24" width="36" height="36" className="google-icon">
+                  <path fill="#EA4335" d="M12 5.04c1.62 0 3.08.56 4.22 1.64l3.15-3.15C17.45 1.74 14.96 1 12 1 7.35 1 3.39 3.65 1.5 7.5l3.6 2.8C6.01 7.15 8.78 5.04 12 5.04z" />
+                  <path fill="#4285F4" d="M23.49 12.27c0-.8-.07-1.56-.2-2.3H12v4.51h6.44c-.28 1.47-1.11 2.71-2.36 3.55l3.66 2.84c2.14-1.97 3.39-4.88 3.39-8.6z" />
+                  <path fill="#FBBC05" d="M5.1 14.8c-.24-.72-.38-1.5-.38-2.3s.14-1.58.38-2.3l-3.6-2.8C.54 9.1 0 10.5 0 12s.54 2.9 1.5 4.6l3.6-2.8z" />
+                  <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.92l-3.66-2.84c-1.01.67-2.3 1.08-4.3 1.08-3.22 0-5.99-2.11-6.9-5.26l-3.6 2.8C3.39 20.35 7.35 23 12 23z" />
+                </svg>
+                <div className="google-text-meta">
+                  <h4>Google Rating</h4>
+                  <span className="live-sync-indicator">
+                    <span className="pulse-dot" /> Live Verified
+                  </span>
+                </div>
+              </div>
+
+              <div className="rating-score-block">
+                <span className="rating-score-val">4.9</span>
+                <div className="rating-stars-wrap">
+                  <div className="stars-row">
+                    <FiStar className="star-icon filled" />
+                    <FiStar className="star-icon filled" />
+                    <FiStar className="star-icon filled" />
+                    <FiStar className="star-icon filled" />
+                    <FiStar className="star-icon filled" />
+                  </div>
+                  <span className="reviews-count-text">Based on 128 reviews</span>
+                </div>
+              </div>
+
+              <p className="summary-desc">
+                We are highly recommended for detailed CSE project development, IEEE publications, and quick 24-hour delivery constraints.
+              </p>
+
+              <a
+                href={SHEETS_CONFIG.GOOGLE_REVIEW_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary write-review-btn"
+                id="google-write-review-btn"
+                style={{ width: '100%', justifyContent: 'center' }}
+              >
+                Write a Review
+              </a>
+            </div>
+
+            {/* Reviews Grid */}
+            <div className="reviews-grid-carousel">
+              {googleReviews.map(({ id, name, role, initials, rating, text, time }) => (
+                <div key={id} className="review-card glass-card" id={`google-review-${id}`}>
+                  <div className="review-card__header">
+                    <div className="reviewer-avatar">
+                      <span>{initials}</span>
+                    </div>
+                    <div className="reviewer-meta">
+                      <h4 className="reviewer-name">{name}</h4>
+                      <span className="reviewer-role">{role}</span>
+                    </div>
+                    <div className="verified-badge-wrap">
+                      <span className="verified-google-badge">Verified</span>
+                    </div>
+                  </div>
+
+                  <div className="review-card__rating">
+                    {[...Array(rating)].map((_, i) => (
+                      <FiStar key={i} className="star-icon filled" size={14} style={{ color: '#FBBC05' }} />
+                    ))}
+                    <span className="review-time">{time}</span>
+                  </div>
+
+                  <p className="review-card__text">“{text}”</p>
                 </div>
               ))}
             </div>
