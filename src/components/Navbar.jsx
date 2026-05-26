@@ -23,9 +23,12 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    setMobileOpen(false)
-    document.body.style.overflow = ''
-  }, [pathname])
+    if (mobileOpen) {
+      /* eslint-disable-next-line react-hooks/set-state-in-effect */
+      setMobileOpen(false)
+      document.body.style.overflow = ''
+    }
+  }, [pathname, mobileOpen])
 
   const toggleMobile = () => {
     setMobileOpen(p => {

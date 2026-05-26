@@ -3,8 +3,7 @@ import {
   FiTarget, FiEye, FiCode,
   FiUsers, FiZap, FiArrowRight, FiCheckCircle,
   FiClock, FiMessageCircle, FiTrendingUp,
-  FiAward, FiBookOpen, FiFileText, FiGlobe, FiStar,
-  FiUser, FiBriefcase
+  FiBookOpen, FiStar
 } from 'react-icons/fi'
 import './About.css'
 
