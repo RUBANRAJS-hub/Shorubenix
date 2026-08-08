@@ -1,0 +1,38 @@
+export const REVIEWS_DATA = [
+  {
+    id: 1,
+    name: 'Vijay Kumar',
+    role: 'Student, CSE',
+    initials: 'VK',
+    rating: 5,
+    text: 'Exceptional final year project support! Ruban and Subbulakshmi helped me build a custom AI-driven IoT system. The code was clean, fully commented, and their viva prep support helped me score an A+!',
+    time: '2 weeks ago',
+  },
+  {
+    id: 2,
+    name: 'Deepika R.',
+    role: 'Research Scholar',
+    initials: 'DR',
+    rating: 5,
+    text: 'I got IEEE paper publication guidance from Shorubenix. Their literature survey drafting and research methodology section was extremely detailed and plagiarism-free. Highly recommended for any student researcher!',
+    time: '3 weeks ago',
+  },
+  {
+    id: 3,
+    name: 'Sanjay Shrinivas',
+    role: 'Startup Founder',
+    initials: 'SS',
+    rating: 5,
+    text: 'We hired Shorubenix for full-stack React and Node web app development. The website is extremely responsive on mobile, loads in less than a second, and their post-delivery support is incredibly fast. Brilliant job!',
+    time: '1 month ago',
+  },
+  {
+    id: 4,
+    name: 'Abinaya K.',
+    role: 'Engineering Graduate',
+    initials: 'AK',
+    rating: 5,
+    text: 'Extremely professional! They delivered my web app project and detailed technical project reports 3 days before my university deadline. Their quick response on WhatsApp saved my final presentation!',
+    time: '1 month ago',
+  },
+]

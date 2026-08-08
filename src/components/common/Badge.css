@@ -1,0 +1,23 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.badge--primary {
+  background: rgba(33, 182, 255, 0.1);
+  color: var(--gold-light);
+  border-color: rgba(33, 182, 255, 0.3);
+}
+
+.badge--success {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.3);
+}
