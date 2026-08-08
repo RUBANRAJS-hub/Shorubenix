@@ -57,7 +57,7 @@ export default function GoogleReviews() {
     }, 2000)
   }
 
-  const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=ChIJgUb7A-36rjsR_S123456789'
+  const googleReviewUrl = 'https://www.google.com/search?q=Shorubenix+Info+Technology+Madurai+reviews'
 
   return (
     <div className="w-full">
