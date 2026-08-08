@@ -24,6 +24,7 @@ import CodeTerminalAnimation from '../components/common/CodeTerminalAnimation'
 import MatrixBackground from '../components/common/MatrixBackground'
 import HeroThreeGlobe3D from '../components/common/HeroThreeGlobe3D'
 import TechStack3DCanvas from '../components/common/TechStack3DCanvas'
+import GoogleReviews from '../components/common/GoogleReviews'
 
 // ReactBits 2026 Interactive Components
 import DecryptedText from '../components/common/DecryptedText'
@@ -481,44 +482,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. Verified Client Reviews & Ratings ── */}
+      {/* ── 7. Real-Time Google Reviews & Verified Ratings ── */}
       <section className="reviews-sec section py-20 bg-black" id="reviews">
         <div className="app-container">
           <div className="section-header text-center mb-12">
-            <span className="section-tag">Client Feedback</span>
+            <span className="section-tag">Google Verified Feedback</span>
             <h2 className="section-title font-afacad gold-gradient-text text-4xl font-bold mt-2">
-              What Our Clients Say
+              Google Customer Reviews &amp; Ratings
             </h2>
             <p className="section-subtitle max-w-2xl mx-auto mt-2 text-gray-300">
-              Verified testimonials from global enterprises, startups, and academic research scholars.
+              Explore 100% verified 5-star Google customer reviews and publish your live review directly.
             </p>
           </div>
 
-          <div className="reviews-cards-grid">
-            {REVIEWS_DATA.slice(0, 3).map((r) => (
-              <motion.div key={r.id} whileHover={{ y: -5 }}>
-                <SpotlightCard className="review-card-box h-full">
-                  <div>
-                    <div className="flex items-center gap-1.5 mb-4">
-                      {[...Array(r.rating)].map((_, i) => (
-                        <FiStar key={i} className="text-[#21B6FF] fill-[#21B6FF]" size={18} />
-                      ))}
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6 italic">“{r.text}”</p>
-                  </div>
-                  <div className="flex items-center gap-3 pt-4 border-t border-gray-800/80">
-                    <div className="w-10 h-10 rounded-full bg-[#21B6FF]/20 border border-[#21B6FF]/40 text-[#21B6FF] flex items-center justify-center font-bold text-sm">
-                      {r.initials}
-                    </div>
-                    <div>
-                      <h4 className="text-white text-sm font-bold">{r.name}</h4>
-                      <span className="text-gray-400 text-xs">{r.role}</span>
-                    </div>
-                  </div>
-                </SpotlightCard>
-              </motion.div>
-            ))}
-          </div>
+          <GoogleReviews />
         </div>
       </section>
 
