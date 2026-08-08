@@ -94,11 +94,11 @@ export default function TechStack3DCanvas() {
 
     window.addEventListener('mousemove', handleMouseMove)
 
-    const clock = new THREE.Clock()
+    const startTime = performance.now()
     let animId
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime()
+      const elapsedTime = (performance.now() - startTime) * 0.001
       group.rotation.y = elapsedTime * 0.25
       group.rotation.x = Math.sin(elapsedTime * 0.15) * 0.2
 

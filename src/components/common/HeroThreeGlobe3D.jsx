@@ -149,10 +149,10 @@ export default function HeroThreeGlobe3D() {
 
     // 7. Animation Loop
     let animationFrameId
-    const clock = new THREE.Clock()
+    const startTime = performance.now()
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime()
+      const elapsedTime = (performance.now() - startTime) * 0.001
 
       // Smooth rotation
       globeGroup.rotation.y = elapsedTime * 0.35
